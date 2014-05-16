@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = [
     url(r'^$', lambda r: redirect('/doc/')),
-    url(r'^doc/', include(doc_urls)),
+    url(r'^doc(/|$)', include(doc_urls)),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     url(r'^admin/', include(admin.site.urls)),
 ]
